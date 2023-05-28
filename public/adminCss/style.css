@@ -1,0 +1,32 @@
+@import url('https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css');
+
+.report-posts {
+    background-color: #50b3b8;
+    color: #fff;
+    padding: 5px 10px 5px 28px;
+    display: inline-block;
+    border: 1px solid #4e8589;
+    border-radius: 3px;
+    position: relative;
+}
+.report-posts::before {
+    content: "\ec15";
+    position: absolute;
+    top: 4px;
+    left: 11px;
+    width: 20px;
+    height: 20px;
+    font-family: 'remixicon' !important;
+}
+a.report-posts:hover {
+    background-color: #278c91;
+    color: #fff;
+}
+a.report-posts:focus
+{
+    color:#fff;
+}
+.btn-group.pull-right.grid-create-btn
+{
+    /* display: none; */
+}
