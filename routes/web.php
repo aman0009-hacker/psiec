@@ -1,6 +1,9 @@
 <?php
 
 use App\Admin\Actions\Post\article;
+use App\Http\Controllers\testing;
+use App\Models\firstTable;
+use App\Models\secondTable;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\thePdf;
@@ -8,6 +11,8 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\theResource;
 use App\Http\Controllers\customTable;
 use App\Http\Controllers\customtt;
+use App\Models\User;
+use App\Http\Controllers\first;
 
 
 
@@ -32,11 +37,57 @@ return $data->download('admin.pdf');
 }
 );
 
-  
 
     // Route::resource('form',theResource::class);
     Route::get('form',[userController::class,'setting']);
 
     Route::get("admin/customTable/{data}/edit",[customtt::class,'custom']);
 
+    Route::get('admin/email/{email}',function($email)
+    {
+       
+      
+        $data=User::all();
+      foreach($data as $value)
+      {
+      
+        if($value->email==$email)
+        {
+            return view('checkEmail');
+           
+        }
 
+      }
+      return "Data";
+     
+    
+    });
+
+    Route::view('first','firsttable');
+    Route::post('thefirst',[first::class,'first'])->name('first');
+    Route::view('second','second');
+    Route::post('thesecond',[first::class,'second'])->name('second');
+
+    Route::get('relation',function()
+    {
+     $data= firstTable::with('made')->get();
+     return dd($data);
+    });
+
+
+    Route::get('therelate',[first::class,'relate']);
+    Route::get('getCourse/{data}',function($data)
+    {
+       $main=secondTable::where('firstTable_id','=',$data)->get();
+      return $main;
+    });
+    Route::post('store',[first::class,'store'])->name('submitdata');
+    Route::get('theajax',[first::class,'theajax'])->name('typemain');
+    Route::view('ahead', 'typeahead');
+
+
+    Route::get('admin/alldatas/api/maindata',[testing::class,'main']);
+    Route::get('admin/alldatas/api/mainsub',[testing::class,'mainsub']);
+
+    Route::get('admin/alldatas/{data}/api/maindata',[testing::class,'mainsubmain']);
+    Route::get('admin/alldatas/{data}/api/mainsub',[testing::class,'maintask']);

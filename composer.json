@@ -12,8 +12,10 @@
         "laravel-admin-ext/summernote": "^1.0",
         "laravel-admin-ext/wang-editor": "1.*",
         "laravel/framework": "^9.19",
+        "laravel/nexmo-notification-channel": "^3.2",
         "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "webpatser/laravel-uuid": "^4.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

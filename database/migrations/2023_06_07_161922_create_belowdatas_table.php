@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('article_types', function (Blueprint $table) {
+        Schema::create('belowdatas', function (Blueprint $table) {
             $table->id();
             $table->string('parent_id');
             $table->string('title');
+            $table->string('maindata_id');
             $table->string('order');
             $table->timestamps();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article_types');
+        Schema::dropIfExists('belowdatas');
     }
 };

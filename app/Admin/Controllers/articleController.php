@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 
 use App\Admin\Forms\theForm;
+use App\Admin\Forms\userEmail;
 use App\Models\article;
 use App\Models\article_type;
 use App\Models\customTable;
@@ -17,6 +18,7 @@ Use Encore\Admin\Widgets\Table;
 use App\Admin\Actions\Post\BatchReplicate;
 use Encore\Admin\Layout\Content;
 use App\Admin\Actions\Post\custom_edit;
+use App\Models\User;
 
 
 
@@ -94,7 +96,9 @@ class articleController extends AdminController
         
         return $content
              ->body($grid)
-            ->body(new theForm());
+            ->body(new theForm())
+            ->body(new userEmail);
+            ;
       
       
        

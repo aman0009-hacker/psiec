@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Encore\Admin\Traits\ModelTree;
 
-class article_type extends Model
+class firstTable extends Model
 {
     use HasFactory;
-    use ModelTree;
-
+    public function made()
+    {
+     return  $this->hasMany(secondTable::class,'firstTable_id','id');
+    }
 }
