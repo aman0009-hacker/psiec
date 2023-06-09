@@ -10,6 +10,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Admin;
 
 class alldController extends AdminController
 {
@@ -35,6 +36,7 @@ class alldController extends AdminController
         $grid->column('datass.title', __('Datasub'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+        admin::html("<h1>this is html</h1>");
 
         return $grid;
     }
