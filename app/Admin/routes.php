@@ -25,6 +25,10 @@ Route::group([
     $router->resource('belowdatas', belowdController::class);
     $router->resource('datasubs', subdController::class);
     $router->resource('alldatas', alldController::class);
+    $router->resource('yardsupervisors', supervisorController::class);
+
+
+ 
    
 
     

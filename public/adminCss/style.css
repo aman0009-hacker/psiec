@@ -26,7 +26,14 @@ a.report-posts:focus
 {
     color:#fff;
 }
-.btn-group.pull-right.grid-create-btn
-{
-    /* display: none; */
+
+.pro {
+    display: flex;
+    width: 100%;
+    margin-top:10px;
+}
+.qua {
+    display: flex;
+    width: 100%;
+    margin-top:10px;
 }

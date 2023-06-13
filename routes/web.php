@@ -13,6 +13,7 @@ use App\Http\Controllers\customTable;
 use App\Http\Controllers\customtt;
 use App\Models\User;
 use App\Http\Controllers\first;
+use App\Models\yardsupervisor;
 
 
 
@@ -91,3 +92,14 @@ return $data->download('admin.pdf');
 
     Route::get('admin/alldatas/{data}/api/maindata',[testing::class,'mainsubmain']);
     Route::get('admin/alldatas/{data}/api/mainsub',[testing::class,'maintask']);
+
+    Route::post('admin/yardsupervisors/makeit',function(request $request)
+    {
+      $data=new yardsupervisor();
+      $data->product=$request->product;
+      $data->notes=$request->notes;
+      $data->supervisor_id=$request->supervisor_id;
+      $data->quantity=$request->quantity;
+      $data->save();
+      return redirect()->back();
+    });
