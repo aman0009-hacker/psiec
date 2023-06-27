@@ -24,7 +24,7 @@ class custom extends Form
      */
     public function handle(Request $request)
     {
-      
+    
     $data=$request->all();
         customTable::create($data);
         

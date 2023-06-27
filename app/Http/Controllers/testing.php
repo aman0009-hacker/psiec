@@ -15,7 +15,7 @@ public function main(Request $request)
 {
     $provinceId = $request->get('q');
 
-    return belowdata::where('maindata_id', $provinceId)->get(['id', DB::raw('title as text')]);
+    return belowdata::where('maindata_id', $provinceId)->get(['id' ,DB::raw('title as text')]);
 }
 public function mainsubmain(Request $request)
 {

@@ -17,7 +17,7 @@
     <label for="prod">Product</label>
     <select name="data" id="change">
         <option value="">Select Product</option>
-        @foreach ($data as $values )
+        @foreach ($data as $values)
             <option value="{{$values->id}}">{{$values->name}}</option>
         @endforeach
     </select>
@@ -45,6 +45,7 @@
     $(document).ready(function() {
             $('#change').on('change', function() {
                var categoryID = $(this).val();
+               console.log(categoryID);
                if(categoryID) {
                    $.ajax({
                        url: '/getCourse/'+categoryID,

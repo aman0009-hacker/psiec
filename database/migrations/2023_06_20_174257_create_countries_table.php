@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('yardsupervisors', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->string('product');
-            $table->bigInteger("quantity");
-            $table->string('amount');
-            $table->string('notes');
-            $table->bigInteger('supervisor_id')->nullable();
+            $table->string('shortName');
+            $table->string('name');
+            $table->string('phoneCode');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('yardsupervisors');
+        Schema::dropIfExists('countries');
     }
 };

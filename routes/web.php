@@ -1,6 +1,7 @@
 <?php
 
 use App\Admin\Actions\Post\article;
+use App\Http\Controllers\storing;
 use App\Http\Controllers\testing;
 use App\Models\firstTable;
 use App\Models\secondTable;
@@ -93,13 +94,16 @@ return $data->download('admin.pdf');
     Route::get('admin/alldatas/{data}/api/maindata',[testing::class,'mainsubmain']);
     Route::get('admin/alldatas/{data}/api/mainsub',[testing::class,'maintask']);
 
-    Route::post('admin/yardsupervisors/makeit',function(request $request)
-    {
-      $data=new yardsupervisor();
-      $data->product=$request->product;
-      $data->notes=$request->notes;
-      $data->supervisor_id=$request->supervisor_id;
-      $data->quantity=$request->quantity;
-      $data->save();
-      return redirect()->back();
-    });
+    // Route::post('makeit',[function(request $request)
+    // {
+    //   $data=new yardsupervisor();
+    //   $data->product=$request->product;
+    //   $data->notes=$request->notes;
+    //   $data->supervisor_id=$request->supervisor_id;
+    //   $data->quantity=$request->quantity;
+    //   $data->save();
+    //   return redirect()->back();
+    // });
+   Route::get('admin/yardsupervisors/create',[storing::class,'view']);
+    Route::post('maindata',[storing::class,'mainData'])->name('storeData');
+    Route::get('admin/edit/{data}',[storing::class,'more']);
