@@ -1,6 +1,7 @@
 <?php
 
 use App\Admin\Actions\Post\article;
+use App\Http\Controllers\excelController;
 use App\Http\Controllers\storing;
 use App\Http\Controllers\testing;
 use App\Models\firstTable;
@@ -107,3 +108,6 @@ return $data->download('admin.pdf');
    Route::get('admin/yardsupervisors/create',[storing::class,'view']);
     Route::post('maindata',[storing::class,'mainData'])->name('storeData');
     Route::get('admin/edit/{data}',[storing::class,'more']);
+
+
+    Route::get('excel',[excelController::class,'excelData']);

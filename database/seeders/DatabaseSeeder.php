@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\dummy;
+use App\Models\pro;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        dummy::factory(10)->create();
+        // dummy::factory(10)->create();
+
+        pro::create([
+            'name'=>"steel"
+        ]);
+        
+        pro::create([
+            'name'=>"coal"
+        ]);
+
     }
 }

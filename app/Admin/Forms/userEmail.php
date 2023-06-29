@@ -15,7 +15,7 @@ class userEmail extends Form
      *
      * @var string
      */
-    public $title = '';
+    public $title = 'user';
 
     /**
      * Handle the form request.
@@ -28,6 +28,9 @@ class userEmail extends Form
     {
         
          $data=user::all();
+      
+     
+         
 
       $senddata=[
         "greeting"=>$request->greeting,
@@ -67,6 +70,6 @@ class userEmail extends Form
             'name'       => 'John Doe',
             'email'      => 'John.Doe@gmail.com',
             'created_at' => now(),
-        ];
+        ];  
     }
 }
